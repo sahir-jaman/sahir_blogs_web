@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sahir Blogs</title>
+
+    {% load static %}
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body>
+
+    {% include "home/navbar/topbar.html" %}
+    {% include 'home/navbar/navbar.html' %}
+    {% include "home/navbar/searchbar.html" %}
+
+    <main>
+        {% block content %}
+        {% endblock  %}
+    </main>
+
+    
+    <div class="pt-10">
+        {% include "home/footer/footer.html" %}
+    </div>
+
+</body>
+</html>

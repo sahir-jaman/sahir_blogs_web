@@ -1,0 +1,38 @@
+<nav class="max-w-[90%] mx-auto py-10">
+    <div class="flex justify-between items-center">
+        <!-- Main Navbar for larger screens -->
+        <div class="main_navbar hidden md:flex space-x-5 md:space-x-10 text-gray-500">
+            <a href="/" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Home</a>
+            <a href="" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Courses</a>
+            <a href="" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Blogs</a>
+            <a href="" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">My_services</a>
+            <a href="{% url 'contact_me' %}" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Contact Me</a>
+        </div>
+        <!-- Toggle Button for smaller screens -->
+        <button id="toggle_button" class="block md:hidden text-gray-500 hover:text-black transition-all duration-100">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+
+        <!-- Theme Toggle Section -->
+        <div class="text-gray-500 hover:text-black transition-all duration-100 flex">
+            <i class="pt-1 pr-1 fa-solid fa-circle-half-stroke"></i>
+            <p>Theme</p>
+        </div>
+    </div>
+    <!-- Mobile Navbar for smaller screens -->
+    <div id="mobile_navbar" class="hidden md:hidden flex-col space-y-5 mt-5 text-gray-500">
+        <a href="/" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Home</a>
+        <a href="" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Courses</a>
+        <a href="" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Blogs</a>
+        <a href="" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">My_services</a>
+        <a href="{% url 'contact_me' %}" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Contact Me</a>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('toggle_button').addEventListener('click', function () {
+        var mobileNavbar = document.getElementById('mobile_navbar');
+        mobileNavbar.classList.toggle('hidden');
+        mobileNavbar.classList.toggle('flex');
+    });
+</script>

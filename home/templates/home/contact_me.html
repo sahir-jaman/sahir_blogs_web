@@ -1,0 +1,46 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    {% load static %}
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="contact" class="contact md:pt-[60px] lg:pt-[80px] pt-[40px]">
+        <div class="text-white max-w-[90%] md:max-w-[80%]">
+            <h1 class="text-[40px]">Contact Me</h1>
+            <p class="text-justify py-2 text-[18px] md:w-[61%]">
+                I am interested in working with any company who thinks my skill will
+                be helpful for them. If you believe I could be a valuable asset to your team, please feel free to drop me a line. I look forward to connecting with you.
+            </p>
+            <div class="Forms text-black">
+                <form class="pt-4 w-12/12 md:w-8/12 h-11/12" method="post" action="{% url 'contact_me' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="w-full lg:w-11/12 my-3 inter">
+                        <button
+                            class="bg-[#2ecc71] hover:bg-blue-600 text-black font-bold py-2 px-4 rounded"
+                            type="submit"
+                        >
+                            Send
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% if messages %}
+        <div>
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+</body>
+</html>
