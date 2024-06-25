@@ -1,0 +1,14 @@
+<div class="max-w-[90%] mx-auto">
+    <h1 class="pt-16 text-[40px]">All Blogs</h1>
+    <div class="py-[10px] grid grid-cols-1 md:grid-cols-2 gap-4">
+        {% for blog in blogs %}
+            <div class="border border-black p-5">
+                <div class="h-2/4 w-2/5">
+                    <img class="h-full w-full object-cover" src="https://images.pexels.com/photos/863963/pexels-photo-863963.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Image">
+                </div>
+                <p class="pt-4 text-[25px] font-normal">{{ blog.title }}</p>
+                <p class="my-[10px] text-justify">{{ blog.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

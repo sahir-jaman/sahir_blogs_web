@@ -1,7 +1,18 @@
-# forms.py
 from django import forms
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'w-full p-3', 'placeholder': 'Name'}))
-    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'w-full p-3', 'placeholder': 'Your Email'}))
-    message = forms.CharField(widget=forms.Textarea(attrs={'class': 'w-full p-3', 'placeholder': 'Message'}), required=True)
+    name = forms.CharField(
+        widget=forms.TextInput(attrs={
+            'class': 'border-black focus:border-blue-500 focus:ring focus:ring-blue-200 focus:outline-none'
+        })
+    )
+    email = forms.EmailField(
+        widget=forms.EmailInput(attrs={
+            'class': 'border-black focus:border-blue-500 focus:ring focus:ring-blue-200 focus:outline-none'
+        })
+    )
+    message = forms.CharField(
+        widget=forms.Textarea(attrs={
+            'class': 'border-black focus:border-blue-500 focus:ring focus:ring-blue-200 focus:outline-none'
+        })
+    )
