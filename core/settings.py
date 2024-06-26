@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'blogs',
     'home',
+    'courses',
 
     #fontawesome
     'fontawesomefree',
