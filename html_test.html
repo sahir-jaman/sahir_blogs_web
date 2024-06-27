@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        'custom': '6px 6px 10px -1px rgba(0,0,0,0.15), -6px -6px 10px -1px rgba(255,255,255,0.8)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#e3edf7]">
+    
+    <h1 class="text-4xl font-bold mb-8">All Courses</h1>
+    <div class="ml-[100px] mt-[100px] flex flex-wrap gap-8">
+        <!-- First Card  -->
+        <div class="relative w-[400px] bg-[#e3edf7] shadow-custom rounded-xl mt-[15px]">
+            <!-- Image section -->
+            <div class="h-[300px] w-[400px] rounded-t-md overflow-hidden">
+                <label for="course1" class="block h-full w-full cursor-pointer">
+                    <img class="h-full w-full object-cover" src="https://images.pexels.com/photos/1168758/pexels-photo-1168758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Python Programming Language">
+                </label>
+            </div>
+            <!-- Input -->
+            <input type="radio" id="course1" name="course" class="absolute peer opacity-0">
+            <!-- Heading -->
+            <label for="course1" class="font-bold tracking-[1px] mx-[20px]
+                h-[50px] flex items-center mt-[15px]">Python Programming Language</label>
+            <!-- Arrow -->
+            <div class="absolute top-[332px] right-[30px] rotate-0 peer-checked:rotate-180 duration-200">
+                <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <!-- Content -->
+            <div class="max-h-0 overflow-hidden peer-checked:max-h-full transition-max-height duration-500">
+                <p class="px-5 py-3 text-sm">
+                    Python is a high-level, interpreted programming language known for its readability, simplicity, and versatility. Created by Guido van Rossum and first released in 1991, Python has since become one of the most popular programming languages in the world.
+                </p>
+            </div>
+        </div>
+
+        <!-- Second Card  -->
+        <div class="relative w-[400px] bg-[#e3edf7] shadow-custom rounded-xl mt-[15px]">
+            <!-- Image section -->
+            <div class="h-[300px] w-[400px] rounded-t-md overflow-hidden">
+                <label for="course2" class="block h-full w-full cursor-pointer">
+                    <img class="h-full w-full object-cover" src="https://images.pexels.com/photos/1168758/pexels-photo-1168758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="C Programming Language">
+                </label>
+            </div>
+            <!-- Input -->
+            <input type="radio" id="course2" name="course" class="absolute peer opacity-0">
+            <!-- Heading -->
+            <label for="course2" class="font-bold tracking-[1px] mx-[20px]
+                h-[50px] flex items-center mt-[15px]">C Programming Language</label>
+            <!-- Arrow -->
+            <div class="absolute top-[332px] right-[30px] rotate-0 peer-checked:rotate-180 duration-200">
+                <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <!-- Content -->
+            <div class="max-h-0 overflow-hidden peer-checked:max-h-full transition-max-height duration-500">
+                <p class="px-5 py-3 text-sm">
+                    C is a high-level, interpreted programming language known for its readability, simplicity, and versatility. Created by Guido van Rossum and first released in 1991, Python has since become one of the most popular programming languages in the world.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+</body>
+</html>

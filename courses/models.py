@@ -1,6 +1,17 @@
 from django.db import models
 
+class Course(models.Model):
+    title = models.CharField(max_length=100, default="")
+    image = models.ImageField(upload_to='images/',null=True, blank=True)
+    introduction = models.TextField(null=True, blank=True)
+    duration = models.CharField(max_length=15, null=True, blank=True)
+    status = models.CharField(max_length=15, null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
 class Module(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, default=1) 
     name = models.CharField(max_length=100)
 
     def __str__(self):

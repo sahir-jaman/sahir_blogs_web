@@ -3,7 +3,7 @@
         <!-- Main Navbar for larger screens -->
         <div class="main_navbar hidden md:flex space-x-5 md:space-x-10 text-gray-500">
             <a href="/" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Home</a>
-            <a href="" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Courses</a>
+            <a href="{%url 'all_courses'%}" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Courses</a>
             <a href="{%url 'blog_list'%}" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Blogs</a>
             <a href="" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">My_services</a>
             <a href="{% url 'contact_me' %}" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Contact Me</a>
@@ -22,8 +22,8 @@
     <!-- Mobile Navbar for smaller screens -->
     <div id="mobile_navbar" class="hidden md:hidden flex-col space-y-5 mt-5 text-gray-500">
         <a href="/" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Home</a>
-        <a href="" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Courses</a>
-        <a href="" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Blogs</a>
+        <a href="{%url 'all_courses'%}" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Courses</a>
+        <a href="{%url 'blog_list'%}" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Blogs</a>
         <a href="" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">My_services</a>
         <a href="{% url 'contact_me' %}" class="hover:text-black transition-all duration-100 rounded-md text-[15px] md:text-xl font-medium">Contact Me</a>
     </div>
