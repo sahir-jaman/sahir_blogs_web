@@ -1,0 +1,63 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="max-w-[90%] my-[50px] mx-auto">
+
+    <div class="main grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div class="w-72 h-fit group relative overflow-hidden rounded-md shadow-custom">
+            <div class="h-96 w-72">
+                <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="{% static 'services/python2.png' %}" alt="CSS Image">
+                </div>
+                <div class="absolute h-full w-full flex items-center justify-center bg-black/25 top-20 group-hover:top-0 opacity-0 hover:opacity-100 transition-all duration-300">
+                    <div class="bg-[white] rounded-md">
+                        <h1 class="p-2 text-md font-bold text-[#2222e7] flex justify-center items-center">Any Python Task</h1>
+                        <a href="" class="border-[2px] border-[black] mx-[80px] font-bold text-[#e11515] flex justify-center items-center">Contact Me</a>
+                    </div>
+                </div>
+        </div>
+    
+        <div class="w-72 h-fit group relative overflow-hidden rounded-md shadow-custom">
+            <div class="h-96 w-72">
+                <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="{% static 'services/website.jpg' %}" alt="CSS Image">
+                </div>
+                <div class="absolute h-full w-full flex items-center justify-center bg-black/25 top-20 group-hover:top-0 opacity-0 hover:opacity-100 transition-all duration-300">
+                    <div class="bg-[white] rounded-md">
+                        <h1 class="p-2 text-md font-bold text-[#2222e7] flex justify-center items-center">Create Full-Stack Website</h1>
+                        <a href="" class="border-[2px] border-[black] mx-[80px] font-bold text-[#e11515] flex justify-center items-center">Contact Me</a>
+                    </div>
+                </div>
+        </div>
+    
+        <div class="w-72 h-fit group relative overflow-hidden rounded-md shadow-custom">
+            <div class="h-96 w-72">
+                <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="{% static 'services/ml.jpg' %}" alt="CSS Image">
+                </div>
+                <div class="absolute h-full w-full flex items-center justify-center bg-black/25 top-20 group-hover:top-0 opacity-0 hover:opacity-100 transition-all duration-300">
+                    <div class="bg-[white] rounded-md">
+                        <h1 class="p-2 text-md font-bold text-[#2222e7] flex justify-center items-center">Machine Learning Model Creation</h1>
+                        <a href="" class="border-[2px] border-[black] mx-[80px] font-bold text-[#e11515] flex justify-center items-center">Contact Me</a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="w-72 h-fit group relative overflow-hidden rounded-md shadow-custom">
+            <div class="h-96 w-72">
+                <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    src="{% static 'services/css.jpg' %}" alt="CSS Image">
+                </div>
+                <div class="absolute h-full w-full flex items-center justify-center bg-black/25 top-20 group-hover:top-0 opacity-0 hover:opacity-100 transition-all duration-300">
+                    <div class="bg-[white] rounded-md">
+                        <h1 class="p-2 text-md font-bold text-[#2222e7] flex justify-center items-center">Any Design Task</h1>
+                        <a href="" class="border-[2px] border-[black] mx-[80px] font-bold text-[#e11515] flex justify-center items-center">Contact Me</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+</div>
+    
+{% endblock %}

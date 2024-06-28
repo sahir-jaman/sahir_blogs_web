@@ -44,3 +44,9 @@ def contactMe(request):
         form = ContactForm
 
     return render(request, 'home/contact_me.html', {'form': form})
+
+
+
+
+def myServices(request):
+    return render(request, 'home/services/my_services.html')

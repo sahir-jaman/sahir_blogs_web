@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,62 +18,22 @@
         }
     </script>
 </head>
-<body class="bg-[#e3edf7]">
-    
-    <h1 class="text-4xl font-bold mb-8">All Courses</h1>
-    <div class="ml-[100px] mt-[100px] flex flex-wrap gap-8">
-        <!-- First Card  -->
-        <div class="relative w-[400px] bg-[#e3edf7] shadow-custom rounded-xl mt-[15px] self-start">
-            <!-- Image section -->
-            <div class="h-[300px] w-[400px] rounded-t-md overflow-hidden">
-                <label for="course1" class="block h-full w-full cursor-pointer">
-                    <img class="h-full w-full object-cover" src="https://images.pexels.com/photos/1168758/pexels-photo-1168758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Python Programming Language">
-                </label>
-            </div>
-            <!-- Input -->
-            <input type="radio" id="course1" name="course" class="absolute peer opacity-0">
-            <!-- Heading -->
-            <label for="course1" class="font-bold tracking-[1px] mx-[20px]
-                h-[50px] flex items-center mt-[15px]">Python Programming Language</label>
-            <!-- Arrow -->
-            <div class="absolute top-[332px] right-[30px] rotate-0 peer-checked:rotate-180 duration-200">
-                <ion-icon name="chevron-down-outline"></ion-icon>
-            </div>
-            <!-- Content -->
-            <div class="max-h-0 overflow-hidden peer-checked:max-h-full transition-max-height duration-500">
-                <p class="px-5 py-3 text-sm">
-                    Python is a high-level, interpreted programming language known for its readability, simplicity, and versatility. Created by Guido van Rossum and first released in 1991, Python has since become one of the most popular programming languages in the world.
-                </p>
-            </div>
-        </div>
 
-        <!-- Second Card  -->
-        <div class="relative w-[400px] bg-[#e3edf7] shadow-custom rounded-xl mt-[15px]">
-            <!-- Image section -->
-            <div class="h-[300px] w-[400px] rounded-t-md overflow-hidden">
-                <label for="course2" class="block h-full w-full cursor-pointer">
-                    <img class="h-full w-full object-cover" src="https://images.pexels.com/photos/1168758/pexels-photo-1168758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="C Programming Language">
-                </label>
-            </div>
-            <!-- Input -->
-            <input type="radio" id="course2" name="course" class="absolute peer opacity-0">
-            <!-- Heading -->
-            <label for="course2" class="font-bold tracking-[1px] mx-[20px]
-                h-[50px] flex items-center mt-[15px]">C Programming Language</label>
-            <!-- Arrow -->
-            <div class="absolute top-[332px] right-[30px] rotate-0 peer-checked:rotate-180 duration-200">
-                <ion-icon name="chevron-down-outline"></ion-icon>
-            </div>
-            <!-- Content -->
-            <div class="max-h-0 overflow-hidden peer-checked:max-h-full transition-max-height duration-500">
-                <p class="px-5 py-3 text-sm">
-                    C is a high-level, interpreted programming language known for its readability, simplicity, and versatility. Created by Guido van Rossum and first released in 1991, Python has since become one of the most popular programming languages in the world.
-                </p>
-            </div>
+<body class="bg-[#e3edf7]">
+
+
+    <div class="w-72 h-fit group relative overflow-hidden">
+        <div class="h-96 w-72">
+            <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                alt="" />
+        </div>
+        <div
+            class="absolute h-full w-full flex items-center justify-center bg-gray-500/20 top-20 group-hover:top-0 opacity-0 hover:opacity-100 transition-all duration-300">
+            <p class="text-white">WELCOME Sumiya</p>
         </div>
     </div>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-
 </body>
+
 </html>
