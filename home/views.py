@@ -3,10 +3,17 @@ from django.core.mail import send_mail
 from django.contrib import messages
 from .forms import ContactForm
 from blogs.models import Blog
+from courses.models import Course
 
 def homePage(request):
-    blogs = Blog.objects.all()[0:2]
-    return render(request, 'home/home.html', {'blogs': blogs})
+    blogs = Blog.objects.all()[0:3]
+    courses = Course.objects.all()[0:3]
+
+    context = {
+        'blogs': blogs,
+        'courses': courses,
+    }
+    return render(request, 'home/home.html', context)
 
 def contactMe(request):
     # if request.method == 'POST':

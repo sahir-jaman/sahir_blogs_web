@@ -1,0 +1,48 @@
+{% load static %}
+
+<div class="mt-[30px] max-w-[90%] mx-auto">
+    <!-- Products -->
+    <h1 class="text-4xl font-bold my-10">All Courses</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for course in courses %}
+    <div class="relative w-[400px] bg-[#e3edf7] shadow-custom rounded-xl mt-[15px] self-start">
+        <!-- Image section -->
+        <div class="h-[300px] w-[400px] rounded-t-md overflow-hidden">
+            <label for="{{ course.id }}" class="block h-full w-full cursor-pointer">
+                {% if course.image %}
+                    <img class="h-full w-full object-cover" src="{{ course.image.url }}" alt="{{ course.title }}">
+                {% else %}
+                    <img class="h-full w-full object-cover" src="{% static 'default-image.jpg' %}" alt="{{ course.title }}">
+                {% endif %}
+            </label>
+        </div>
+        <!-- Input -->
+        <input type="checkbox" id="{{ course.id }}" class="absolute peer opacity-0">
+        <!-- Heading -->
+        <label for="{{ course.id }}" class="font-bold tracking-[1px] mx-[20px]
+            h-[50px] flex items-center mt-[15px]">{{ course.title }}</label>
+        <!-- Arrow -->
+        <div class="absolute top-[332px] right-[30px] rotate-0 peer-checked:rotate-180 duration-200">
+            <label for="{{course.id}}">
+                <ion-icon name="chevron-down-outline"></ion-icon>
+            </label>
+        </div>
+        <!-- Content -->
+        <div class="w-[400px] pt-5">
+            <label for="{{course.id}}" class="w-full flex justify-between font-bold">
+                <span class="text-sm ml-[20px]">5-6 hours</span>
+                <span class="text-sm mr-[22px]">Free</span>
+            </label>
+        </div>
+        <div class="max-h-0 overflow-hidden peer-checked:max-h-full transition-max-height duration-100">
+            <p class="px-5 py-3 text-sm text-justify pt-6">
+                {{ course.introduction|truncatewords:40 }}
+            </p>
+            <div class="flex justify-center items-center">
+                <button class="flex justify-center items-center mb-4 border-[2px] border-[white] px-3 py-1 rounded-md bg-[#406ae9] focus:border-[black] text-[white]">More Information</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
