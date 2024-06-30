@@ -1,7 +1,12 @@
 <div class="topbar flex justify-between max-w-[90%] mx-auto pt-1 bg-[]">
     <div class="logo flex gap-2">
         <i class="fa-brands fa-youtube pt-1"></i>
-        <p class="tracking-widest">Sahir jaman</p>
+        <p class="tracking-widest">
+            Sahir jaman
+            {% if debug %}
+                <span class="text-red-500 italic ml-1">DEV</span>
+            {% endif %}
+        </p>
     </div>
     <div class="socialMedia">
         <i class="fa-brands fa-facebook px-1 md:px-3"></i>
