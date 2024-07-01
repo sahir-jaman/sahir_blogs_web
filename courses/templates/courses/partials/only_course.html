@@ -10,7 +10,7 @@
         <div class="h-[300px] w-[400px] rounded-t-md overflow-hidden">
             <label for="{{ course.id }}" class="block h-full w-full cursor-pointer">
                 {% if course.image %}
-                    <img class="h-full w-full object-cover" src="{{ course.image.url }}" alt="{{ course.title }}">
+                    <img class="h-full w-full object-cover" src="{{course.image.url }}" alt="{{ course.title }}">
                 {% else %}
                     <img class="h-full w-full object-cover" src="{% static 'default-image.jpg' %}" alt="{{ course.title }}">
                 {% endif %}

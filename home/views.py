@@ -5,15 +5,24 @@ from .forms import ContactForm
 from blogs.models import Blog
 from courses.models import Course
 
-def homePage(request):
-    blogs = Blog.objects.all()[0:3]
-    courses = Course.objects.all()[0:3]
+from django.db.models import Q
+
+def homePage(request, slug=None):
+    query = request.GET.get('query', '')
+
+    if query:
+        blogs = Blog.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+        courses = Course.objects.filter(Q(title__icontains=query) | Q(introduction__icontains=query))
+    else:
+        blogs = Blog.objects.all()[:3]
+        courses = Course.objects.all()[:3]
 
     context = {
         'blogs': blogs,
         'courses': courses,
     }
     return render(request, 'home/home.html', context)
+
 
 def contactMe(request):
     # if request.method == 'POST':
@@ -50,3 +59,23 @@ def contactMe(request):
 
 def myServices(request):
     return render(request, 'home/services/my_services.html')
+
+
+
+def search_results(request):
+    query = request.GET.get('query', '')
+
+    if query:
+        blogs = Blog.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+        courses = Course.objects.filter(Q(title__icontains=query) | Q(introduction__icontains=query))
+    else:
+        blogs = Blog.objects.none()
+        courses = Course.objects.none()
+    print("============blog===========", blogs)
+    print("============courses===========", courses)
+
+    context = {
+        'blogs': blogs,
+        'courses': courses,
+    }
+    return render(request, 'home/navbar/search_results.html', context)

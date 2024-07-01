@@ -1,0 +1,31 @@
+<!-- templates/search_results.html -->
+{% extends 'home/base.html' %}
+
+Search Results
+
+{% block content %}
+<h1>Search Results</h1>
+{% if blogs %}
+    <h2>Blogs</h2>
+    <ul>
+        {% for blog in blogs %}
+            {% include "blogs/partials/only_blogs.html" %}
+        {% empty %}
+            <li>No blogs found.</li>
+        {% endfor %}
+    </ul>
+{% else %}
+
+    <h2>Courses</h2>
+    <ul>
+        {% for course in courses %}
+            {% include "courses/partials/only_course.html" %}
+        {% empty %}
+            <li>No courses found.</li>
+        {% endfor %}
+    </ul>
+
+
+{% endif %}
+
+{% endblock %}
