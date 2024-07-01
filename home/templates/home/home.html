@@ -1,6 +1,11 @@
 {% extends "home/base.html" %}
 
+
 {% block content %}
-    {% include "courses/partials/only_course.html" %}
-    {% include "blogs/partials/only_blogs.html" %}
+    <div class="home_page_here mt-[30px] max-w-[90%] mx-auto">
+        <h1 class="text-4xl font-bold my-10">All Courses</h1>
+        {% include "courses/partials/only_course.html" %}
+        <h1 class="text-4xl font-bold my-10 pt-[10px]">All Blogs</h1>
+        {% include "blogs/partials/only_blogs.html" %}
+    </div>
 {% endblock %}

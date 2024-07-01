@@ -1,5 +1,8 @@
 {% extends "home/base.html" %}
 
 {% block content %}
-    {% include "blogs/partials/only_blogs.html" %}
+    <div class="all_blogs_here max-w-[90%] mx-auto">
+        <h1 class="text-4xl font-bold my-10">All Blogs</h1>
+        {% include "blogs/partials/only_blogs.html" %}
+    </div>
 {% endblock %}

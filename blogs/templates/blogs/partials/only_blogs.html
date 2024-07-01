@@ -1,8 +1,6 @@
 {% load static %}
 
-<div class="mt-[70px] max-w-[90%] mx-auto">
-    <!-- Products -->
-    <h1 class="text-4xl font-bold my-10">All Blogs</h1>
+<div class="only_blog_part">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {% for blog in blogs %}
     <div class="relative w-[400px] bg-[#e3edf7] shadow-custom rounded-xl mt-[15px] self-start">
@@ -34,7 +32,7 @@
                 <span class="text-sm mr-[22px]">Free</span>
             </label>
         </div>
-        <div class="max-h-0 overflow-hidden peer-checked:max-h-full transition-max-height duration-100">
+        <div class="max-h-0 overflow-hidden peer-checked:max-h-full transition-max-height duration-100 pb-2">
             <p class="px-5 py-3 text-sm text-justify pt-6">
                 {{ blog.description|truncatewords:40 }}
             </p>

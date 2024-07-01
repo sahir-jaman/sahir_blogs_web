@@ -1,9 +1,9 @@
 {% extends "home/base.html" %}
 
 
-
 {% block content %}
-
-{% include "courses/partials/only_course.html" %}
-
+    <div class="all_courses_here mt-[30px] max-w-[90%] mx-auto">
+        <h1 class="text-4xl font-bold my-10">All Courses</h1>
+        {% include "courses/partials/only_course.html" %}
+    </div>
 {% endblock %}
