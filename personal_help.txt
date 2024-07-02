@@ -1,0 +1,24 @@
+# tailwind.config.js
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    '../templates/**/*.html',
+    '../**/templates/**/*.html',
+    '../**/forms.py'
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+
+
+# package.json file script section:
+
+"scripts": {
+    "tailwind": "tailwind build -i ../static/css/tailwind.css -o ../static/css/style.css --watch",
+    "minify": "cleancss ../static/css/style.css -o ..static/css/style.min.css"
+  },
