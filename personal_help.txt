@@ -22,3 +22,16 @@ module.exports = {
     "tailwind": "tailwind build -i ../static/css/tailwind.css -o ../static/css/style.css --watch",
     "minify": "cleancss ../static/css/style.css -o ..static/css/style.min.css"
   },
+
+
+
+
+# .env file :
+ENVIRONMENT=development
+SECRET_KEY='=^_fcsbl9cu($m)_1-m6vld82^#b+e)ndh&_xitm0ls!*(g1s-'
+
+
+Get secret key:
+from django.core.management.utils import get_random_secret_key
+print(get_random_secret_key())
+
