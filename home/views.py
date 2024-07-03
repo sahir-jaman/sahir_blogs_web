@@ -66,8 +66,10 @@ def search_results(request):
     query = request.GET.get('query', '')
 
     if query:
-        blogs = Blog.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
-        courses = Course.objects.filter(Q(title__icontains=query) | Q(introduction__icontains=query))
+        # blogs = Blog.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+        blogs = Blog.objects.filter(Q(title__icontains=query))
+        # courses = Course.objects.filter(Q(title__icontains=query) | Q(introduction__icontains=query))
+        courses = Course.objects.filter(Q(title__icontains=query))
     else:
         blogs = Blog.objects.none()
         courses = Course.objects.none()
