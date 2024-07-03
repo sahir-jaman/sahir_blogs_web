@@ -1,0 +1,18 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="max-w-[90%] mx-auto">
+        <h1 class="text-4xl font-bold my-10">{{blog.title}}</h1>
+        <div class="h-[400px] w-[400px] shadow-custom">
+            {% if blog.image %}
+                <img class="h-full w-full object-cover" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+            {% else %}
+                <img class="h-full w-full object-cover" src="{% static 'default-image.jpg' %}" alt="{{ blog.title }}">
+            {% endif %}
+        </div>
+        <div>
+            <p class="py-10 text-justify">{{blog.description}}</p>
+        </div>
+    </div>
+{% endblock %}
