@@ -35,3 +35,18 @@ Get secret key:
 from django.core.management.utils import get_random_secret_key
 print(get_random_secret_key())
 
+
+# special for loop you might need in future:
+<div class="w-3/6">
+  {% for module in modules %}
+    <h1 class="text-lg py-2 px-4 rounded-lg mb-2 
+      {% if forloop.counter|divisibleby:2 %}
+            bg-red-500 
+      {% else %}
+            bg-blue-500 
+      {% endif %}">
+          {{ forloop.counter }} = {{ module.name }}
+      </h1>
+  {% endfor %}
+  </div>
+

@@ -17,7 +17,7 @@ class CustomModuleAdmin(admin.ModelAdmin):
 
     def get_course_title(self, obj):
         return obj.course.title
-    get_course_title.short_description = 'Course Title'
+    get_course_title.short_description = 'Course Title' 
 
 class CustomSectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'get_module_name', 'get_course_title')

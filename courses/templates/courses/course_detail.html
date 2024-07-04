@@ -2,17 +2,60 @@
 {% load static %}
 
 {% block content %}
-    <div class="max-w-[90%] mx-auto">
-        <h1 class="text-4xl font-bold my-10">{{course.title}}</h1>
-        <div class="h-[400px] w-[400px] shadow-custom">
+<div class="max-w-[90%] mx-auto">
+    <h1 class="text-4xl font-bold my-10">{{ course.title }}</h1>
+    <div class="w-full flex justify-between">
+        <div class="w-2/6 h-full shadow-custom">
             {% if course.image %}
                 <img class="h-full w-full object-cover" src="{{ course.image.url }}" alt="{{ course.title }}">
             {% else %}
                 <img class="h-full w-full object-cover" src="{% static 'default-image.jpg' %}" alt="{{ course.title }}">
             {% endif %}
+            <p class="py-8 text-justify">{{ course.introduction }}</p>
         </div>
-        <div>
-            <p class="py-10 text-justify">{{course.introduction}}</p>
+        <div class="w-3/6">
+            {% for module in modules %}
+                <div class="relative bg-[#e3edf7] shadow-custom rounded-xl mt-[15px]">
+                    <!-- Input -->
+                    <input type="checkbox" id="{{ module.name }}" class="absolute peer opacity-0">
+                    <!-- Heading -->
+                    <label for="{{ module.name }}" class="font-bold tracking-[1px] mx-[20px] h-[50px] flex items-center mt-[15px]">
+                        <span class="italic">Module {{ forloop.counter }}</span> = {{ module.name }}
+                    </label>
+                    <!-- Arrow -->
+                    <div class="absolute top-4 right-4 rotate-0 peer-checked:rotate-180 duration-200">  
+                        <label for="{{ module.name }}">
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </label>
+                    </div>
+                    <!-- Sections -->
+                    <div class="max-h-0 overflow-hidden peer-checked:max-h-full transition-max-height duration-100 pb-2">
+                        {% for section in module.section_set.all %}
+                            <div class="px-5 py-1 text-sm text-justify ">
+                                <div class="text-white text-md w-full bg-[#7a7373] p-4 my-2 rounded-md">
+                                    <p>{{ section.title }}</p>
+                                    {% if section.video_file %}
+                                        <p>Video: <a href="{{ section.video_file.url }}" target="_blank">{{ section.video_file.name }}</a></p>
+                                    {% endif %}
+                                    {% if section.video_link %}
+                                        <p>Video Link: <a href="{{ section.video_link }}" target="_blank">{{ section.video_link }}</a></p>
+                                    {% endif %}
+                                    {% if section.note %}
+                                        <p>Note: {{ section.note }}</p>
+                                    {% endif %}
+                                    {% if section.extra_files %}
+                                        <p>Extra Files: {{ section.extra_files }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <!-- <div class="flex justify-center items-center">
+                            <a href="{% url 'course_detail' course.id %}" class="flex justify-center items-center mb-4 border-[2px] border-[white] px-3 py-1 rounded-md bg-[#406ae9] focus:border-[black] text-[white]">More Information</a>
+                        </div> -->
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
+</div>
 {% endblock %}

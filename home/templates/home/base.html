@@ -10,20 +10,17 @@
     <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    
+    {% if debug %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+    {% endif %}
+    <!-- <script src="https://cdn.tailwindcss.com"></script>      -->
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://unpkg.com/htmx.org@2.0.0"></script>
-
-    {% if debug %}
     
-        <link rel="stylesheet" href="{% static "css/style.css" %}">
-    {% else %}
-        <link rel="stylesheet" href="{% static "css/style.min.css" %}">
-    {% endif %}
-
-
-    {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
-
     <script>
         tailwind.config = {
             theme: {
@@ -35,7 +32,6 @@
             }
         }
     </script>
-    
 </head>
 <body>
 

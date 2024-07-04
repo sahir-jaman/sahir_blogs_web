@@ -10,4 +10,19 @@ def allCourses(request):
 
 def courseDetail(request, course_id):
     course = get_object_or_404(Course, id=course_id)
-    return render(request, 'courses/course_detail.html', {'course':course})
+    modules = Module.objects.filter(course=course)
+    # sections = Section.objects.filter(module=modules)
+
+    # print("====================courses==================", course)
+    # for i in modules:
+    #     print("====================Module=================", i)
+    # for i in sections:
+    #     print("====================section=================", i)
+
+
+    context = {
+        'course': course,
+        'modules': modules,
+    }
+
+    return render(request, 'courses/course_detail.html', context )
