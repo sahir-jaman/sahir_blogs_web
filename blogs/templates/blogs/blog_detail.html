@@ -12,7 +12,7 @@
             {% endif %}
         </div>
         <div>
-            <p class="py-10 text-justify">{{blog.description}}</p>
+            <p class="py-10 text-justify">{{blog.description | safe}}</p>
         </div>
     </div>
 {% endblock %}

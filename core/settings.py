@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'fontawesomefree',
     'django_cleanup.apps.CleanupConfig',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -153,3 +154,10 @@ INTERNAL_IPS = (
     '127.0.0.1',
     'localhost:8000'
 )
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}
