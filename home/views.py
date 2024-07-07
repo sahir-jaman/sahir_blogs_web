@@ -79,5 +79,6 @@ def search_results(request):
     context = {
         'blogs': blogs,
         'courses': courses,
+        'query': query,
     }
     return render(request, 'home/navbar/search_results.html', context)
