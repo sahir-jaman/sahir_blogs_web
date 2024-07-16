@@ -13,6 +13,9 @@ module.exports = {
   plugins: [],
 }
 
+# When npm run tailwind don't work :
+npm install tailwindcss --save-dev   ====> it download the tailwind globally
+
 
 
 
